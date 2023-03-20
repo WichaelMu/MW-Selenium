@@ -1,0 +1,13 @@
+name: Execute Selenium Website Testing GitHub Action
+
+jobs:
+  main:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+      - name: Set Up .NET
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: '7.0.0'
+      - run: dotnet build MW-Selenium.csproj
